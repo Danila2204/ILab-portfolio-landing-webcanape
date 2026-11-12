@@ -1,6 +1,95 @@
+// === imports ===
+@import "normalize.css";
+@import "./tailwind.scss";
+// === / imports ===
 // === global ===
 body {
     font-family: Arial, sans-serif;
     font-size: 17px;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: #f00;
+}
+
+.container {
+    width: 89%;
+    display: flex;
+    flex-direction: column;
 }
 // === / global ===
+// === varibales ===
+:root {
+    --button-background-hover-first: #fff;
+    --button-color-hover-first: #830051;
+    --button-background-hover-second: #830051;
+    --button-color-hover-second: #fff;
+    --title-color: #0F488B;
+    --active-link-color: #830051;
+}
+// === / varibales ===
+// === header ===
+.header {
+
+}
+
+.nav {
+    margin-top: 35px;
+
+    img:first-child {
+        margin-top: -13px;
+    }
+
+    &__list {
+        display: flex;
+        column-gap: 50px;
+        list-style: none;
+        margin: 0 60px 0 110px;
+        padding: 0;
+
+        a {
+            color: var(--title-color);
+            font-weight: bold;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        & > .active a {
+            color: var(--active-link-color);
+        }
+    }
+}
+
+.application__button {
+    padding: 18px 40px;
+    background-color: #C4D600;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    color: #3F4444;
+    cursor: pointer;
+    transition: .25s;
+
+    &:hover {
+        background-color: var(--button-background-hover-first);
+        color: var(--button-color-hover-first);
+    }
+
+    &_second:hover {
+        background-color: var(--button-background-hover-second);
+        color: var(--button-color-hover-second);
+    }
+
+    &:not(:hover) {
+        transition: .5s;
+    }
+}
+// === / header ===

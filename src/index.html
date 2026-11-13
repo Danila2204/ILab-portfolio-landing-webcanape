@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="./public/favicon/icon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon/icon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     	<title>ILab</title>
   	</head>
@@ -11,7 +11,7 @@
 		<header class="header flex justify-center">
 			<div class="container">
 				<nav class="nav flex items-center justify-center">
-					<img src="./public/img/Header/logo-1.svg" loading="lazy" alt="logo-1">
+					<img src="/img/Header/logo-1.svg" loading="lazy" alt="logo-1">
 					<ul class="nav__list">
 						<li class="nav__item active"><a href="#">О программе</a></li>
 						<li class="nav__item"><a href="#">Зачем участвовать</a></li>
@@ -20,31 +20,43 @@
 						<li class="nav__item"><a href="#">Этапы</a></li>
 						<li class="nav__item"><a href="#">Контакты</a></li>
 					</ul>
-					<img src="./public/img/Header/logo-2.svg" loading="lazy" alt="logo-2">
+					<img src="/img/Header/logo-2.svg" loading="lazy" alt="logo-2">
 				</nav>
-				<div class="header__main">
-					<div class="header__titles">
-						<h1>ЛАБОРАТОРИЯ ИННОВАЦИЙ iLAB</h1>
-						<p class="header__subtitle">для стартапов в области цифровой медицины</p>
+				<div class="header__main relative grid">
+					<div class="header__background grid">
+						<div class="header__background-top"></div>
+						<div class="header__background-bottom"></div>
 					</div>
-					<div class="header__content">
+					<div class="header__titles flex flex-col text-left">
+						<h1>ЛАБОРАТОРИЯ ИННОВАЦИЙ iLAB</h1>
+						<p class="header__subtitle flex">для стартапов в области цифровой медицины</p>
+					</div>
+					<div class="header__content relative self-end flex">
 						<p class="header__description">
 							Мы собрали компетенции Фонда «Сколково», научно-технологическую и отраслевую экспертизу партнеров, а также клиническую базу медицинского центра Hadassah Medical Moscow для доработки и внедрения инновационных решений цифровой медицины под потребности врачей и пациентов.
 							Проект реализуется совместными усилиями Фонда «Сколково», медицинской клиники Hadassah Medical Moscow и биофармацевтической компании AstraZeneca при поддержке компании ПАО «Ростелеком».
 						</p>
-						<div class="header__application application">
-							<button class="application__button">Подать заявку</button>
-							<div class="application__titles">
-								<p class="application__subtitle">Приём заявок до</p>
-								<p class="application__title">31 марта 2021</p>
-							</div>
+					</div>
+					<div class="header__application application self-end">
+						<button class="application__button">Подать заявку</button>
+						<div class="application__titles">
+							<p class="application__subtitle">Приём заявок до</p>
+							<p class="application__title">31 марта 2021</p>
 						</div>
-						<img class="header__woman-img" src="./public/img/Header/Header-img.png" loading="lazy" alt="header__img">
+					</div>
+					<div class="header__visual">
+						<img class="header__woman-img" src="/img/Header/Header-img.png" loading="lazy" alt="header__img">
 					</div>
 				</div>
 			</div>
 		</header>
 		<!-- / header -->
+		<!-- main -->
+		<main class="main">
+			<div class="container">
+			</div>
+		</main>
+		<!-- / main -->
       	<!-- footer -->
       	<footer>
 		  	<script type="module" src="./js/main.js"></script>

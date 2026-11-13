@@ -1,13 +1,24 @@
 // === imports ===
 @import "normalize.css";
-@import "./tailwind.scss";
 // === / imports ===
+// === varibales ===
+:root {
+    --button-background-hover-first: #fff;
+    --button-color-hover-first: #830051;
+    --button-background-hover-second: #830051;
+    --button-color-hover-second: #fff;
+    --title-color: #0F488B;
+    --active-link-color: #830051;
+    --text-color: #3F4444;
+}
+// === / varibales ===
 // === global ===
 body {
     font-family: Arial, sans-serif;
     font-size: 17px;
     display: flex;
     flex-direction: column;
+    color: var(--text-color);
 }
 
 a {
@@ -24,19 +35,95 @@ button {
     flex-direction: column;
 }
 // === / global ===
-// === varibales ===
-:root {
-    --button-background-hover-first: #fff;
-    --button-color-hover-first: #830051;
-    --button-background-hover-second: #830051;
-    --button-color-hover-second: #fff;
-    --title-color: #0F488B;
-    --active-link-color: #830051;
-}
-// === / varibales ===
 // === header ===
-.header {
+h1 {
+    color: #830051;
+    line-height: 70px;
+    font-weight: bold;
+    font-size: 60px;
+    max-width: 550px;
+    margin: 0;
+}
 
+h2 {
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: bold;
+    color: var(--title-color);
+}
+
+.header {
+    width: 100%;
+
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+
+    &__main {
+        width: 100%;
+        grid-template-columns: 38fr 62fr;
+        grid-template-areas:
+        "titles visual"
+        "h_content visual"
+        "application visual"
+        ;
+        margin-top: 30px;
+        padding-bottom: 120px;
+        padding-left: 16%;
+        column-gap: 110px;
+    }
+
+    &__background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        grid-template-rows: 42fr 58fr;
+        grid-template-areas:
+        "bg_top"
+        "bg_bottom"
+        ;
+
+        &-top {
+            grid-area: bg_top;
+        }
+
+        &-bottom {
+            background: url("../public/img/Header/content-background.png");
+            grid-area: bg_bottom;
+        }
+    }
+    
+    &__titles {
+        margin-top: 50px;
+        grid-area: titles;
+    }
+    
+    &__application {
+        grid-area: application;
+    }
+    
+    &__content {
+        grid-area: h_content;
+    }
+
+    &__visual {
+        grid-area: visual;
+    }
+
+    &__description {
+        color: #fff;
+        max-width: 550px;
+        line-height: 27px;
+    }
+
+    &__subtitle {
+        margin-top: 17px;
+        font-size: 24px;
+    }
 }
 
 .nav {
@@ -54,6 +141,7 @@ button {
         padding: 0;
 
         a {
+            font-size: 16px;
             color: var(--title-color);
             font-weight: bold;
             
@@ -68,28 +156,55 @@ button {
     }
 }
 
-.application__button {
-    padding: 18px 40px;
-    background-color: #C4D600;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    color: #3F4444;
-    cursor: pointer;
-    transition: .25s;
+.application
+{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 40px;
 
-    &:hover {
-        background-color: var(--button-background-hover-first);
-        color: var(--button-color-hover-first);
+    &__button
+    {
+        align-self: start;
+        padding: 18px 40px;
+        background-color: #C4D600;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        color: #3F4444;
+        cursor: pointer;
+        transition: .25s;
+
+        &:hover {
+            background-color: var(--button-background-hover-first);
+            color: var(--button-color-hover-first);
+        }
+
+        &_second:hover {
+            background-color: var(--button-background-hover-second);
+            color: var(--button-color-hover-second);
+        }
+
+        &:not(:hover) {
+            transition: .5s;
+        }
     }
 
-    &_second:hover {
-        background-color: var(--button-background-hover-second);
-        color: var(--button-color-hover-second);
+    &__titles {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
     }
 
-    &:not(:hover) {
-        transition: .5s;
+    &__subtitle {
+        font-weight: bold;
+        line-height: 24px;
+        font-size: 16px;
+    }
+
+    &__title {
+        line-height: 40px;
+        font-weight: bold;
+        font-size: 30px;
     }
 }
 // === / header ===
